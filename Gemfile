@@ -6,6 +6,19 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'slim'
+gem 'slim-rails'
+gem 'devise'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
