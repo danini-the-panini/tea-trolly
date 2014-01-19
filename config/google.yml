@@ -1,0 +1,11 @@
+development:
+  client_id: 359371093050-uj7b38avd2nod0ab118en7glii5lv23c.apps.googleusercontent.com
+  secret: zsdREE0cSdzp3lckZAq5utii
+
+test:
+  client_id: 359371093050-uj7b38avd2nod0ab118en7glii5lv23c.apps.googleusercontent.com
+  secret: zsdREE0cSdzp3lckZAq5utii
+
+production:
+  client_id: 359371093050-t5m5cqaleql6s3de4jn6ppleeplliji5.apps.googleusercontent.com
+  secret: iAP1Q72DEfwYlZKrGM_dT4QZ
