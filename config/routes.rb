@@ -1,4 +1,5 @@
 TeaTrolly::Application.routes.draw do
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,11 +57,13 @@ TeaTrolly::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {
+    :omniauth_callbacks => "users/omniauth_callbacks"
+  }
 
   devise_scope :user do
-   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-end
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 
   root :to => 'home#index'
 end
