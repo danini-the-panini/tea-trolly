@@ -66,4 +66,9 @@ TeaTrolly::Application.routes.draw do
   end
 
   root :to => 'home#index'
+
+  match 'items/list' => 'items#list'
+
+  resources :items
+  resources :users
 end

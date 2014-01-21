@@ -2,4 +2,5 @@ div
   = "Welcome #{current_user.name}"
 
 div
+  = link_to "View Profile", user_path(current_user)
   = link_to "Sign out", :destroy_user_session

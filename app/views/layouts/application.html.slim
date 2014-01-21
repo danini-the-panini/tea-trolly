@@ -1,10 +1,24 @@
 html
   head
     title
-      = "TeaTrolly"
+      | TeaTrolly
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
   body
-    = yield
+    h1
+      = link_to "Tea Trolly", '/'
+    h2
+      | Your one-stop shop for &lt;shop_contents&gt;
+
+    div
+      h3
+        | User Panel:
+      - if user_signed_in?
+        = render "/user_bar"
+      - else
+        = render "/login"
+
+    div
+      = yield
