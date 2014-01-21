@@ -182,6 +182,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg
   rails (= 3.2.16)
+  rspec-expectations
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda

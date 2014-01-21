@@ -1,5 +1,12 @@
-= "Welcome #{current_user.name}"
-|  | 
-= link_to "View Profile", user_path(current_user)
-|  | 
-= link_to "Sign out", :destroy_user_session
+h3
+  | User Panel:
+- if user_signed_in?
+  = "Welcome #{current_user.name}"
+  |  | 
+  = link_to "View Profile", user_path(current_user)
+  |  | 
+  = link_to "Sign out", :destroy_user_session
+- else
+  = link_to "Log in with facebook", user_omniauth_authorize_path(:facebook)
+  |  | 
+  = link_to "Log in with Google", user_omniauth_authorize_path(:google_oauth2)

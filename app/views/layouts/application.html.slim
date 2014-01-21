@@ -11,13 +11,7 @@ html
       = link_to "Tea Trolly", '/'
     | Your one-stop shop for &lt;shop_contents&gt;
     hr
-    div
-      h3
-        | User Panel:
-      - if user_signed_in?
-        = render "/user_bar"
-      - else
-        = render "/login"
+    = render "/user_bar"
     hr
     div
       = yield
