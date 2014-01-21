@@ -9,9 +9,8 @@ html
   body
     h1
       = link_to "Tea Trolly", '/'
-    h2
-      | Your one-stop shop for &lt;shop_contents&gt;
-
+    | Your one-stop shop for &lt;shop_contents&gt;
+    hr
     div
       h3
         | User Panel:
@@ -19,6 +18,6 @@ html
         = render "/user_bar"
       - else
         = render "/login"
-
+    hr
     div
       = yield
