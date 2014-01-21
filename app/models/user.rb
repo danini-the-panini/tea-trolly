@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   validates_presence_of :name
-  validates_length_of :name, in: 8..16
-  validates_uniqueness_of :name
+  validates_length_of :name, in: 3..100
   validates_format_of :name,
     with: /^[a-zA-Z][a-zA-Z0-9 ]*[a-zA-Z0-9]$/
 
