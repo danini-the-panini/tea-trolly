@@ -11,6 +11,14 @@ class CartController < ApplicationController
     redirect_to cart_index_url
   end
 
+  def empty
+    init_cart
+
+    @cart.empty!
+
+    redirect_to cart_index_url
+  end
+
   private
   def init_cart
     @cart = session[:cart] ||= Cart.new

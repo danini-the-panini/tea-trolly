@@ -6,9 +6,9 @@ h3
   = link_to "View Profile", user_path(current_user)
   |  | 
   = link_to "Sign out", :destroy_user_session
-  |  | 
-  = link_to "View Cart", cart_index_url
 - else
   = link_to "Log in with facebook", user_omniauth_authorize_path(:facebook)
   |  | 
   = link_to "Log in with Google", user_omniauth_authorize_path(:google_oauth2)
+|  | 
+= link_to "View Cart", cart_index_url

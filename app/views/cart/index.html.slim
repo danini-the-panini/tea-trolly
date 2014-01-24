@@ -1,5 +1,6 @@
 - if @cart.empty?
-  | No items in your cart
+  | No items in your cart...
+  = link_to "Go buy something!", items_path
 - else
   table
     tr
@@ -15,3 +16,9 @@
       td Total
       td = @cart.quantity
       td = "R #{@cart.price}"
+
+  = link_to "Continue shopping", items_path
+  |  | 
+  = link_to "Empty Cart", cart_empty_url
+  |  | 
+  = link_to "Checkout", "javascript:alert('No');"

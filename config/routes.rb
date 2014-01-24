@@ -72,5 +72,6 @@ TeaTrolly::Application.routes.draw do
 
   match 'cart' => 'cart#index', :as => :cart_index
   match 'cart/add/:id' => 'cart#add', :as => :add_to_cart
+  match 'cart/empty' => 'cart#empty', :as => :cart_empty
 
 end
