@@ -1,0 +1,2 @@
+- @cart = session[:cart] ||= Cart.new
+= link_to "View Cart (#{@cart.quantity})", cart_index_url

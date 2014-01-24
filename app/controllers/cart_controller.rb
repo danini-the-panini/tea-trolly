@@ -19,6 +19,19 @@ class CartController < ApplicationController
     redirect_to cart_index_url
   end
 
+  def update
+    init_cart
+
+    params.each do |k, v|
+      id = k.dup
+      if id.slice! 'cart_item_'
+        @cart.set_quantity(Item.find(id), v.to_i)
+      end
+    end
+
+    redirect_to cart_index_url
+  end
+
   private
   def init_cart
     @cart = session[:cart] ||= Cart.new

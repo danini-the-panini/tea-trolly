@@ -2,23 +2,25 @@
   | No items in your cart...
   = link_to "Go buy something!", items_path
 - else
-  table
-    tr
-      td Name
-      td Quantity
-      td Price
-    - @cart.each_item do |cart_item|
+  = form_tag(cart_update_url, method: "get") do
+    table
       tr
-        td = cart_item.item.name
-        td = cart_item.quantity
-        td = "R #{cart_item.price}"
-    tr
-      td Total
-      td = @cart.quantity
-      td = "R #{@cart.price}"
+        td Name
+        td Quantity
+        td Price
+      - @cart.each_item do |cart_item|
+        tr
+          td = cart_item.item.name
+          td = text_field_tag "cart_item_#{cart_item.item.id}", cart_item.quantity.to_s
+          td = "R #{cart_item.price}"
+      tr
+        td Total
+        td = @cart.quantity; submit_tag "Update"
+        td = "R #{@cart.price}"
 
-  = link_to "Continue shopping", items_path
-  |  | 
-  = link_to "Empty Cart", cart_empty_url
-  |  | 
-  = link_to "Checkout", "javascript:alert('No');"
+  div style="float: left; width: auto;"
+    = link_to "Continue shopping", items_path
+    |  | 
+    = link_to "Empty Cart", cart_empty_url
+    |  | 
+  = button_to "Checkout", "javascript:alert('No');"
