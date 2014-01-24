@@ -1,0 +1,13 @@
+- if @cart.empty?
+  | No items in your cart
+- else
+  table
+    - @cart.each_item do |cart_item|
+      tr
+        td = cart_item.item.name
+        td = cart_item.quantity
+        td = cart_item.price
+    tr
+      td Total
+      td = @cart.quantity
+      td = @cart.price

@@ -55,4 +55,14 @@ class Cart
     @items.each_value { |cart_item| total += cart_item.price }
     total
   end
+
+  def quantity
+    total = 0
+    @items.each_value { |cart_item| total += cart_item.quantity }
+    total
+  end
+
+  def each_item
+    @items.each_value { |cart_item| yield cart_item }
+  end
 end

@@ -35,6 +35,13 @@ describe Cart do
       expect(cart.price).to eq(90)
     end
 
+    it "should calculate the total number of items" do
+      cart.add(FactoryGirl.build_stubbed(:item))
+      cart.set_quantity(item, 2)
+
+      expect(cart.quantity).to eq(3)
+    end
+
     context "when a specific item is present" do
 
       it "should allow the item to be removed" do
