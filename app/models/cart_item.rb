@@ -1,7 +1,6 @@
 require 'exceptions'
 
 class CartItem
-
   def initialize(item)
     @item = item
     @quantity = 1

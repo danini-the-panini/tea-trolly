@@ -1,5 +1,5 @@
-#source 'https://gems.cloudafrica.net'
-source 'https://rubygems.org'
+source 'https://gems.cloudafrica.net'
+#source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.16'
@@ -21,6 +21,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'rspec-expectations'
+  gem 'pry'
 end
 
 # Gems used only for assets and not required
